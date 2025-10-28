@@ -66,7 +66,16 @@ class AlunoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $aluno = Aluno::find($id);
+
+        if(isset($aluno)) {
+            $aluno->nome = $request->nome;
+            $aluno->curso = $request->curso;
+            $aluno->ano = $request->ano;
+            $aluno->save();
+        }
+
+        return redirect()->route('aluno.index');
     }
 
     /**
@@ -74,6 +83,12 @@ class AlunoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $aluno = aluno::find($id);
+
+        if(isset($aluno)) {
+            $aluno->delete();
+        }
+
+        return redirect()->route('aluno.index');
     }
 }

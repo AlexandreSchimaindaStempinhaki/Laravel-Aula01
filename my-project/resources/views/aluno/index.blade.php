@@ -23,7 +23,11 @@
         <td>{{ $item->ano }}</td>
         <td>
             <a href="{{route('aluno.edit', $item->id)}}">Alterar</a>
-            <a href="{{route('aluno.destroy', $item->id)}}">Remover</a>
+            <form action = "{{route('aluno.destroy', $item->id)}}" method="POST"style="display: inline;">
+                @csrf
+                @method('delete')
+                <input type="submit" value="remover">
+            </form>
         </td>
     </tr>
     @endforeach
