@@ -2,16 +2,15 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use \Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
-class Aluno extends Model
+class Curso extends Model
 {
     use SoftDeletes;
-    public function curso()
+    public function aluno()
     {
-        return $this->belongsTo('\App\Models\Curso');
+        return $this->hasMany('\App\Models\Aluno');
     }
 }

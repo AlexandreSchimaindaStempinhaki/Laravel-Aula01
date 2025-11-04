@@ -23,3 +23,11 @@ Route::get('/', function () {
 Route::get('/principal', [MainController::class, 'index']);
 
 Route::resource('/aluno', AlunoController::class);
+
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
+
+Route::get('/report/aluno', [AlunoController::class, 'report'])
+    ->name('report.aluno');
+
