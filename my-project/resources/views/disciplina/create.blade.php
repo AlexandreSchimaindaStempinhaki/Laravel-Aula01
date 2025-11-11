@@ -17,7 +17,7 @@
                         class="form-control"
                         name="nome"
                         placeholder="Nome da Disciplina"
-                        value="{{ 'nome' }}"
+                        value="{{ old('nome') }}"
                     />
                     <label for="nome">Nome da Disciplina</label>
                 </div>
